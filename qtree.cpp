@@ -16,10 +16,8 @@ void dfs(int pos , int df){
 	depth[pos]=df;
 	for(itvi=A[pos].begin();itvi!=A[pos].end(); itvi++)
 	{
-		//cout<<"itv"<<*itvi<<endl;	
 		if(*itvi>pos)
 		{
-		//	cout<<"itv inside if"<<*itvi<<endl;
 			parent[*itvi][0]=pos;
 			dfs(*itvi, df+1);
 			//below I have used to find the subtree size
@@ -96,7 +94,6 @@ void sparseMatrix(int n)
 
 int lca(int u, int v)
 {
-//	cout<<"hello"<<endl;
 	if(depth[v]<depth[u])
 		swap(u, v);
 	int diff=depth[v]-depth[u];
@@ -209,47 +206,11 @@ int main(){
 			C[b-1].push_back(c);
 			otherEnd[i]=max(a-1, b-1);
 		}
-		/*for(int i=0; i<n; i++)
-		{
-			//cout<<"i"<<i<<endl;
-			for(itv=A[i].begin(); itv!=A[i].end(); itv++)
-			{
-			//	cout<<"itv in main"<<*itv<<endl;
-			}
-		}*/
 		chainNo=0;
 		dfs(root, 0);
 		hld(root, -1);
 		make_tree(1, 0, ptr);
-	/*	for(int i=0; i<n; i++)
-		{
-			cout<<"baseArray "<<baseArray[i]<<" ";
-		}
-		*/
-	/*	for(int i=0; i<n; i++){
-			cout<<i<<"=>"<<endl;
-			cout<<parent[i]<<" "<<sub[i]<<endl;
-		}*/
-		/*for(int i=0; i<n; i++)
-		{
-			for(int j=0; j<level; j++)
-			{
-				cout<<parent[i][j]<<" ";
-			}
-			cout<<endl;
-		}*/
 		sparseMatrix( n);
-		//cout<<"Printing the parent"<<endl;
-		/*for(int i=0; i<n; i++)
-		{
-			for(int j=0; j<level; j++)
-			{
-				cout<<parent[i][j]<<" ";
-			}
-			cout<<endl;
-		}*/
-		//cout<<"lca 4 3"<<lca(4, 3)<<endl;
-		//cout<<"lca 1 2"<<lca(2, 1)<<endl;
 		while(1){
 			string s;
 			cin>>s;

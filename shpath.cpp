@@ -31,14 +31,12 @@ int  Graph:: shortestPath(int src, int dest){
 	dist[src]=0;
 	while(!pq.empty())
 	{
-	//	cout<<pq.top().second<<" "<<pq.top().first<<endl;
 		int u=pq.top().second;
 		if(node[u]==1)
 		{
 			pq.pop();	
 			continue;
 		}
-	//	cout<<"After check"<<pq.top().second<<" "<<pq.top().first<<endl;
 		node[u]=1;
 		pq.pop();
 		list<iPair >::iterator i;
@@ -48,12 +46,10 @@ int  Graph:: shortestPath(int src, int dest){
 			int weight= (*i).second;
 			if(!node[v])
 			{
-	//			cout<<"dist[v] at checking"<<dist[v]<<endl;
 				if(dist[v]> dist[u]+weight)
 				{
 					dist[v]=dist[u]+weight;
 					pq.push(make_pair(dist[v], v));
-	//				cout<<"pushed "<<v<<" "<<dist[v]<<endl;	
 				}
 			}
 		}
@@ -80,14 +76,12 @@ int main(){
 				g.addEdge(i, nr, cost);
 			}
 		}	
-		//g.modify();
 		cin>>r;
 		while(r--)
 		{
 			cin>>name>>name2;
 			itm=m.find(name);
 			itm2=m.find(name2);
-			//cout<<itm->second<<" "<<itm2->second<<endl;
 			int ans=g.shortestPath(itm->second, itm2->second);
 			cout<<ans<<endl;
 		}

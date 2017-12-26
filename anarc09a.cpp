@@ -18,7 +18,6 @@ int main()
 			if(s[i]=='}' && counto==0)
 			{
 				tcount++;
-			//	cout<<"increased second  at "<<i<<endl;
 				counto++;
 			}
 			else if(s[i]=='}')
@@ -30,10 +29,8 @@ int main()
 				if(s[i]=='{')
 				{
 					tcount++;
-		//			cout<<"increased first"<<endl;
 				}
 				counto--;
-		//		cout<<"counto decreased at first to "<<counto<<endl;
 			}
 		}
 		cout<<countind<<". "<<tcount<<endl;

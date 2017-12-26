@@ -24,7 +24,6 @@ ulli atob(int a, int b, int c){
 	 ulli count=0;
 	while(vesa!=c && vesb!=c && count<=mini)
 	{
-	//	cout<<vesa<<" "<<vesb<<endl;
 		if(!vesa)
 		{
 			vesa=a;
@@ -51,7 +50,6 @@ ulli atob(int a, int b, int c){
 			}
 		}
 	}
-	//cout<<endl;
 	return count;
 }
 int main(){
@@ -66,9 +64,7 @@ int main(){
 			if(c%gc==0)
 			{
 				mini=ULLONG_MAX;
-				//cout<<"helllo"<<endl;
 				ab=atob(a, b, c);	
-				//cout<<"returned after first phase"<<endl;
 				mini=ab;
 				ba=atob(b, a, c);
 				cout<<std::min(ab, ba)<<endl;

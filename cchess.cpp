@@ -11,7 +11,6 @@ void bfs(int a, int b)
 		sum=arra[a][b];
 	else
 		sum=0;
-	//cout<<"sum"<<sum<<endl;
 	if(a-2>=0 && b-1>=0)
 	{
 		int mul=sum+(a*(a-2))+(b*(b-1));
@@ -103,11 +102,6 @@ int main(){
 		}
 		arra[a][b]=0;
 		bfs(a, b);
-		/*for(int i=0; i<8; i++)
-		{
-			for(int j=0; j<8; j++)
-				cout<<"arra"<<i<<j<<":"<<arra[i][j]<<endl;
-		}*/
 		if(arrcheck[c][d]==1)
 		cout<<arra[c][d]<<endl;
 		else
